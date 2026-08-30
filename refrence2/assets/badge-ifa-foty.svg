@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <polygon points="100,8 180,52 180,148 100,192 20,148 20,52" fill="#f4a017" stroke="#c47a00" stroke-width="2"></polygon>
+  <text x="100" y="42" text-anchor="middle" fill="#fff" font-family="Arial Black" font-size="22" font-weight="900">IFA</text>
+  <line x1="40" y1="58" x2="160" y2="58" stroke="#fff" stroke-width="1.5"></line>
+  <text x="100" y="86" text-anchor="middle" fill="#fff" font-family="Arial Black" font-size="18" font-weight="900">FRANCHISEE</text>
+  <text x="100" y="106" text-anchor="middle" fill="#fff" font-family="Arial" font-size="11" font-weight="700" letter-spacing="2">OF THE</text>
+  <text x="100" y="130" text-anchor="middle" fill="#fff" font-family="Arial Black" font-size="22" font-weight="900">YEAR</text>
+  <line x1="40" y1="142" x2="160" y2="142" stroke="#fff" stroke-width="1.5"></line>
+  <rect x="60" y="148" width="80" height="32" fill="#c47a00"></rect>
+  <text x="100" y="172" text-anchor="middle" fill="#fff" font-family="Arial Black" font-size="22" font-weight="900">2022</text>
+</svg>

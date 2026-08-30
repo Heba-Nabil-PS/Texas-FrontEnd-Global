@@ -1,0 +1,62 @@
+Please check sitemap below:
+
+Navigation Bar 
+----------------------------------------------------------------
+-  Home 
+-  About Us 
+-  Brands 
+-  Investor Relations 
+-  Contact Us 
+-  Newsroom 
+
+Home Page 
+----------------------------------------------------------------
+-  Video Banner 
+-  About Us 
+-  Brands 
+-  Metrics 
+-  Announcements 
+
+About Us 
+----------------------------------------------------------------
+-  Vision + Mission 
+-  Values 
+-  Strategy 
+-  Board of Directors + Committee members 
+-  Executive Management 
+-  Organization Structure 
+
+Brands 
+----------------------------------------------------------------
+-  Display all brand information
+    o Brief 
+    o Logo + Images
+    o CTA to the brand's website 
+
+
+Investor Relations 
+----------------------------------------------------------------
+-  Compliance and regulations (By Law) 
+-  Financial Statements (PDF downloadable files Half year/ Full Year) 
+-  Annual Reports (PDF downloadable files) 
+-  Investor Relations Contact (Email: investors@foodsgate.sa) 
+
+Contact Us 
+----------------------------------------------------------------
+-  Address 
+-  Email 
+-  Phone Number 
+-  Submission/Career Form 
+
+Newsroom 
+----------------------------------------------------------------   
+- Opens an inner page with external links. 
+
+Footer Links 
+----------------------------------------------------------------
+-  LinkedIn Icon 
+-  Join our Newsletter 
+-  Contact Us (clickable directing to inner page) 
+-  Get in Touch: Email (info@foodsgate.sa) 
+-  HO: Email, Number, and Company Location (content) 
+-  Investor Relations Contact (Email: investors@foodsgate.sa)

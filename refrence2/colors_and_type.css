@@ -1,0 +1,312 @@
+/* =====================================================================
+   Texas Chicken — Colors & Type
+   Single source of truth. Import this in any design.
+   ===================================================================== */
+
+/* ---------- Web Fonts ---------- */
+@font-face { font-family: "Texas Chicken Condensed"; src: url("fonts/TexasChickenCondensed-Thin.ttf")       format("truetype"); font-weight: 100; font-style: normal; font-display: swap; }
+@font-face { font-family: "Texas Chicken Condensed"; src: url("fonts/TexasChickenCondensed-Light.ttf")      format("truetype"); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: "Texas Chicken Condensed"; src: url("fonts/TexasChickenCondensed-Regular.ttf")    format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Texas Chicken Condensed"; src: url("fonts/TexasChickenCondensed-SemiBold.ttf")   format("truetype"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Texas Chicken Condensed"; src: url("fonts/TexasChickenCondensed-Bold.ttf")       format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Texas Chicken Condensed"; src: url("fonts/TexasChickenCondensed-ExtraBold.ttf")  format("truetype"); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "Texas Chicken Condensed"; src: url("fonts/TexasChickenCondensed-Heavy.ttf")      format("truetype"); font-weight: 900; font-style: normal; font-display: swap; }
+
+/* In production, Texas Chicken Condensed is used for BOTH display and
+   body — it has comfortable text weights (400/500/600). Arabic uses
+   Bahij (font-bahij in production) and falls back to system Arabic. */
+
+:root {
+  /* =================================================================
+     COLOR — Brand
+     ================================================================= */
+  /* Primary signal — the Texas Chicken yellow/amber, used on CTAs,
+     promotional banners, the star burst, deal flags. */
+  --tc-yellow:       hsl(41.89 92.5% 52.94%);   /* #f5b51e */
+  --tc-yellow-600:   hsl(38   92%   46%);       /* #e0a30c — pressed */
+  --tc-yellow-300:   hsl(44   95%   72%);       /* tints, hover wash */
+  --tc-yellow-100:   hsl(46   100%  92%);       /* surface wash */
+
+  /* Heritage red — Texas Chicken / Church's red. Reserved: signage,
+     hero accents, the chicken silhouette in the lockup, alert states.
+     Matches production --alt-color: hsl(7.63 62.11% 37.25%). */
+  --tc-red:          hsl(7.63 62.11% 37.25%);   /* #9a3324 */
+  --tc-red-700:      #7a2719;                   /* pressed */
+  --tc-red-300:      #c4604f;                   /* hover wash on tinted bg */
+  --tc-red-100:      #f7e7e3;                   /* light surface wash */
+
+  /* Burnt orange accent — production --accent: hsl(25.71 99.12% 44.31%).
+     Used for promo callouts and hot-flash CTAs that aren't yellow. */
+  --tc-orange:       hsl(25.71 99.12% 44.31%);  /* #e15f02 */
+  --tc-orange-700:   hsl(25 99% 36%);
+
+  /* Foundation black — warm off-black, used for body type and dark UI.
+     Matches production --dark: hsl(34.29 8.43% 16.27%). */
+  --tc-black:        hsl(34.29 8.43% 16.27%);   /* #2d2a26 */
+  --tc-black-800:    #3d3934;
+  --tc-black-600:    #5a544c;
+  --tc-black-400:    #8a8278;
+  --tc-dark-gray:    hsl(0 0% 45.88%);          /* production --dark-gray, for muted UI */
+
+  /* Cream / paper — the brand's warm neutral. NEVER pure #fff for
+     full-bleed surfaces; cream gives a fried-paper, in-store feel. */
+  --tc-cream:        #faf6ef;
+  --tc-cream-200:    #f3ede1;
+  --tc-cream-300:    #e8dfcc;
+  --tc-paper:        #fffdf7;                   /* cards on cream bg */
+  --tc-white:        #ffffff;                   /* pure white — used sparingly */
+
+  /* Semantic */
+  --tc-success:      #2f7a3a;
+  --tc-success-100:  #e3f2e6;
+  --tc-warning:      #e0a30c;                   /* same family as yellow */
+  --tc-danger:       #9a3324;                   /* uses brand red */
+  --tc-info:         #2a5a8a;
+
+  /* =================================================================
+     COLOR — Semantic foundations
+     ================================================================= */
+  --bg:              var(--tc-cream);
+  --bg-elev-1:       var(--tc-paper);
+  --bg-elev-2:       var(--tc-white);
+  --bg-inverse:      var(--tc-black);
+
+  --fg-1:            var(--tc-black);            /* headlines, primary copy */
+  --fg-2:            var(--tc-black-800);        /* body */
+  --fg-3:            var(--tc-black-600);        /* secondary */
+  --fg-4:            var(--tc-black-400);        /* tertiary, captions */
+  --fg-on-yellow:    var(--tc-black);            /* black ALWAYS on yellow */
+  --fg-on-red:       var(--tc-cream);            /* cream/white on red */
+  --fg-on-black:     var(--tc-cream);
+
+  --accent:          var(--tc-yellow);
+  --accent-fg:       var(--tc-black);
+  --hot:             var(--tc-red);              /* red for heat, urgency */
+  --hot-fg:          var(--tc-cream);
+
+  /* Borders — never pure neutral; warm tones to match the cream paper. */
+  --border-1:        rgba(45, 42, 38, 0.10);
+  --border-2:        rgba(45, 42, 38, 0.18);
+  --border-strong:   rgba(45, 42, 38, 0.34);
+  --divider:         rgba(45, 42, 38, 0.08);
+
+  /* =================================================================
+     TYPE — Stack
+     ================================================================= */
+  /* In production:
+     - Latin uses font-texas (Texas Chicken Condensed) for both display AND body.
+     - Arabic uses font-bahij (Bahij family) — apply via [dir="rtl"]/[lang="ar"].
+     The condensed face has 100/300/400/600/700/800/900 — use 400 for body,
+     700–900 for display. */
+  --font-display:    "Texas Chicken Condensed", "Oswald", "Arial Narrow", system-ui, sans-serif;
+  --font-body:       "Texas Chicken Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-arabic:     "Bahij TheSansArabic", "Bahij", "Tahoma", system-ui, sans-serif;
+  --font-mono:       "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* =================================================================
+     TYPE — Scale (display-forward; condensed face wants tight tracking)
+     ================================================================= */
+  --fs-12:  12px;
+  --fs-14:  14px;
+  --fs-16:  16px;   /* base body */
+  --fs-18:  18px;
+  --fs-20:  20px;
+  --fs-24:  24px;
+  --fs-32:  32px;
+  --fs-40:  40px;
+  --fs-56:  56px;
+  --fs-72:  72px;
+  --fs-96:  96px;
+  --fs-128: 128px;  /* hero — kiosk */
+
+  --lh-tight:  0.92;   /* display headlines, condensed face stacks tight */
+  --lh-snug:   1.10;
+  --lh-normal: 1.45;   /* body */
+  --lh-loose:  1.65;
+
+  --tracking-tight:  -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;
+  --tracking-caps:   0.08em;   /* SMALL CAPS labels, eyebrow text */
+
+  /* =================================================================
+     SPACING (4px grid)
+     ================================================================= */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* =================================================================
+     RADII — Texas Chicken uses GENEROUS rounding on cards / pills
+     and full-pill on CTAs. Tight rounding on inputs.
+     ================================================================= */
+  /* Production --radius is 8px (radius-sm). Cards typically use radius-lg,
+     CTAs use radius-pill, kiosk hero buttons use radius-2xl. */
+  --radius-xs:  4px;
+  --radius-sm:  8px;            /* production default */
+  --radius-md:  12px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-2xl: 32px;
+  --radius-pill: 999px;
+
+  /* =================================================================
+     ELEVATION — soft, warm shadows. Avoid cool gray drop shadows.
+     ================================================================= */
+  --shadow-1: 0 1px 2px rgba(45,42,38,0.08), 0 1px 0 rgba(45,42,38,0.04);
+  --shadow-2: 0 4px 14px rgba(45,42,38,0.10), 0 1px 2px rgba(45,42,38,0.06);
+  --shadow-3: 0 10px 30px rgba(45,42,38,0.14), 0 2px 6px rgba(45,42,38,0.08);
+  --shadow-pop: 0 16px 48px rgba(154, 51, 36, 0.18), 0 4px 12px rgba(45,42,38,0.10);
+
+  /* Inset / inner stroke for the cream-on-cream card pattern */
+  --inset-hair: inset 0 0 0 1px rgba(45,42,38,0.06);
+
+  /* =================================================================
+     MOTION
+     ================================================================= */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-pop:    cubic-bezier(0.34, 1.56, 0.64, 1);  /* satisfying overshoot for adds-to-cart */
+
+  --dur-fast:   140ms;
+  --dur-base:   220ms;
+  --dur-slow:   360ms;
+
+  /* Press/hover deltas — Texas Chicken uses a SHRINK-AND-DARKEN pattern */
+  --press-scale: 0.97;
+  --hover-lift: translateY(-1px);
+}
+
+/* =====================================================================
+   SEMANTIC TYPOGRAPHY
+   Use these classes (or @apply via vars) instead of hand-rolling sizes.
+   ===================================================================== */
+.tc-eyebrow,
+[data-type="eyebrow"] {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-14);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--tc-red);
+  line-height: var(--lh-snug);
+}
+
+.tc-h1, [data-type="h1"] {
+  font-family: var(--font-display);
+  font-weight: 900;            /* Heavy */
+  font-size: var(--fs-72);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  text-transform: uppercase;
+  color: var(--fg-1);
+}
+
+.tc-h2, [data-type="h2"] {
+  font-family: var(--font-display);
+  font-weight: 800;            /* ExtraBold */
+  font-size: var(--fs-56);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  text-transform: uppercase;
+  color: var(--fg-1);
+}
+
+.tc-h3, [data-type="h3"] {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-40);
+  line-height: var(--lh-snug);
+  text-transform: uppercase;
+  color: var(--fg-1);
+}
+
+.tc-h4, [data-type="h4"] {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-24);
+  line-height: var(--lh-snug);
+  text-transform: uppercase;
+  color: var(--fg-1);
+}
+
+.tc-price, [data-type="price"] {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-32);
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-1);
+  font-variant-numeric: tabular-nums;
+}
+
+.tc-body, [data-type="body"] {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--fs-16);
+  line-height: var(--lh-normal);
+  color: var(--fg-2);
+}
+
+.tc-body-sm, [data-type="body-sm"] {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--fs-14);
+  line-height: var(--lh-normal);
+  color: var(--fg-3);
+}
+
+.tc-caption, [data-type="caption"] {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-12);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-wide);
+  color: var(--fg-4);
+}
+
+.tc-button, [data-type="button"] {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-16);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* Arabic — production swaps to Bahij via [dir="rtl"] in Tailwind config.
+   Mirror that pattern here so RTL blocks get the right Arabic family. */
+[lang="ar"], [dir="rtl"] {
+  font-family: var(--font-arabic);
+  letter-spacing: 0;
+}
+
+/* =====================================================================
+   SCROLLBAR — production paints the thumb in brand yellow.
+   ===================================================================== */
+.tc-root ::-webkit-scrollbar { width: 4px; }
+.tc-root ::-webkit-scrollbar-track { box-shadow: inset 0 0 5px gainsboro; }
+.tc-root ::-webkit-scrollbar-thumb { background: var(--tc-yellow); border-radius: 0; }
+
+/* =====================================================================
+   GLOBAL DEFAULTS — opt in via .tc-root on a wrapper
+   ===================================================================== */
+.tc-root {
+  background: var(--bg);
+  color: var(--fg-1);
+  font-family: var(--font-body);
+  font-size: var(--fs-16);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

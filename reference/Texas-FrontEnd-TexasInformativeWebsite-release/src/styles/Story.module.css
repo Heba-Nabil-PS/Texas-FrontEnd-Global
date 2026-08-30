@@ -1,0 +1,159 @@
+.storySection {
+  padding-top: 4rem;
+  background-color: #faf7f2;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.topStory {
+  text-align: center;
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mainHeading {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  font-family: 'Georgia', serif;
+  color: #4a2512;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.emphasis {
+  font-size: 4.5rem;
+  display: inline-block;
+  margin: 0 0.5rem;
+  color: #8b4513;
+}
+
+.sunIcon {
+  font-size: 3rem;
+  color: #8b4513;
+  position: absolute;
+  top: -20px;
+  right: 0;
+  transform: rotate(45deg);
+}
+
+.middleStory {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.imageContainer {
+  flex: 1;
+  position: relative;
+}
+
+
+
+.messageContainer {
+  flex: 1;
+  padding: 2rem;
+}
+
+.subHeading {
+  font-size: 2rem;
+  color: #4a2512;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.message {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #666;
+  max-width: 500px;
+}
+
+.bottomStory {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  gap: 4rem;
+}
+
+.burritoContainer {
+  flex: 1;
+}
+
+.burritoImage {
+  width: 100%;
+  height: auto;
+  transform: rotate(-5deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.thoughtHeading {
+  flex: 1;
+  font-size: 3rem;
+  color: #4a2512;
+  font-family: 'Georgia', serif;
+  text-transform: uppercase;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+@media (max-width: 968px) {
+  .middleStory,
+  .bottomStory {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .mainHeading {
+    font-size: 2.5rem;
+  }
+
+  .emphasis {
+    font-size: 3.5rem;
+  }
+
+  .subHeading {
+    font-size: 1.8rem;
+  }
+
+  .message {
+    font-size: 1.1rem;
+    margin: 0 auto;
+  }
+
+  .thoughtHeading {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .storySection {
+    padding: 2rem 1rem;
+    gap: 3rem;
+  }
+
+  .mainHeading {
+    font-size: 2rem;
+  }
+
+  .emphasis {
+    font-size: 2.5rem;
+  }
+
+  .subHeading {
+    font-size: 1.5rem;
+  }
+} 

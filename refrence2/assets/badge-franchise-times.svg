@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120">
+  <text x="0" y="32" fill="#1e5fa8" font-family="Georgia, serif" font-size="22" font-style="italic" font-weight="700">FranchiseTimes</text>
+  <text x="0" y="100" fill="#e8262a" font-family="Arial Black" font-size="78" font-weight="900" font-style="italic" letter-spacing="-3">TOP</text>
+  <text x="135" y="105" fill="#e8262a" font-family="Georgia, serif" font-size="92" font-weight="900" font-style="italic" letter-spacing="-5">400</text>
+  <path d="M 135 110 Q 230 118 312 108" stroke="#e8262a" stroke-width="4" fill="none" stroke-linecap="round"></path>
+</svg>

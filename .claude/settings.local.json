@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm -f components/sections/MarketMap.tsx)",
+      "Bash(npx tsc *)"
+    ]
+  }
+}
