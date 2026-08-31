@@ -749,8 +749,6 @@ export const franchisePage = {
   hero: {
     eyebrow: "Franchise with us",
     title: ["Own a piece", "of the crunch."],
-    subtitle:
-      "It started 72 years ago when George W. Church began selling chicken across from the Alamo in San Antonio, Texas. Today more than 1,500 restaurants trade in 24 countries — and we expect to bring our brands to more than 20 new international markets.",
   },
   /** Headline proof — every figure is stated on franchise.texaschicken.com. */
   proof: [

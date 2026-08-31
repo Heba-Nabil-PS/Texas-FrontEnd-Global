@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, type ReactNode } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { LinesReveal } from "./TextReveal";
 import { ease } from "@/lib/motion";
@@ -9,6 +10,10 @@ import { ease } from "@/lib/motion";
  * Cinematic inner-page hero. Big masked-line title, floating decoration, a
  * slow-rotating ghost star, scroll-linked parallax and a scroll cue. Shared by
  * every route so the site feels like one production.
+ *
+ * Every hero shares one photographic ground (override with `image`). The overlay is
+ * deliberately light at the top (so the picture reads) and deepens toward the
+ * bottom, where the eyebrow, title and subtitle sit.
  */
 export default function PageHero({
   eyebrow,
@@ -16,6 +21,7 @@ export default function PageHero({
   subtitle,
   children,
   accentFrom = 1,
+  image = "/assets/story/heritage-chicken.jpg",
 }: {
   eyebrow: string;
   title: string[];
@@ -23,12 +29,16 @@ export default function PageHero({
   children?: ReactNode;
   /** index from which lines turn yellow (default: last line) */
   accentFrom?: number;
+  /** photographic background, shown under a light ink overlay; shared by every hero */
+  image?: string;
 }) {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [0, 120]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   const starRot = useTransform(scrollYProgress, [0, 1], [0, 90]);
+  /* the picture drifts slower than the copy — depth without distraction */
+  const imageY = useTransform(scrollYProgress, [0, 1], [0, 60]);
 
   const accent = accentFrom < 0 ? title.length + accentFrom : accentFrom;
 
@@ -37,8 +47,29 @@ export default function PageHero({
       ref={ref}
       className="relative flex min-h-[82vh] items-end overflow-hidden bg-ink pb-16 pt-40 text-cream md:min-h-[86vh] md:pb-24"
     >
-      {/* Warm radial glows */}
-      <div className="pointer-events-none absolute inset-0">
+      {image && (
+        <>
+          {/* scale-110 gives the parallax room to move without baring an edge */}
+          <motion.div style={{ y: imageY }} className="pointer-events-none absolute inset-0 scale-110">
+            <Image
+              src={image}
+              alt=""
+              aria-hidden
+              fill
+              priority
+              sizes="100vw"
+              className="select-none object-cover"
+            />
+          </motion.div>
+          {/* Light, even wash — enough to sit type on, not enough to hide the photo */}
+          <div className="pointer-events-none absolute inset-0 bg-ink/35" />
+          {/* …deepening toward the bottom, where the copy lands */}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/40 to-ink/5" />
+        </>
+      )}
+
+      {/* Warm radial glows — dialled back over a photo so they tint, not haze */}
+      <div className={`pointer-events-none absolute inset-0 ${image ? "opacity-50" : ""}`}>
         <div className="absolute -left-40 top-10 h-[42rem] w-[42rem] rounded-full bg-tex-red/25 blur-[120px]" />
         <div className="absolute -right-24 bottom-0 h-[36rem] w-[36rem] rounded-full bg-tex-yellow/15 blur-[120px]" />
       </div>

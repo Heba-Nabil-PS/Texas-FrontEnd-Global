@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import PageHero from "@/components/ui/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
@@ -16,8 +17,11 @@ export default function FranchisingPage() {
       <PageHero
         eyebrow={franchisePage.hero.eyebrow}
         title={franchisePage.hero.title}
-        subtitle={franchisePage.hero.subtitle}
-      />
+      >
+        <Button href="#apply-form" variant="yellow" pulse>
+          Start your application
+        </Button>
+      </PageHero>
 
       {/* Proof — the figures that justify the rest of the page */}
       <section className="bg-cream-200 pb-16 pt-0 md:pb-20">
@@ -49,6 +53,19 @@ export default function FranchisingPage() {
         id="apply"
         className="relative overflow-hidden bg-ink py-24 text-cream md:py-32"
       >
+        {/* Photographic ground instead of flat black; the overlay keeps the
+            cream copy and the form legible on top of it. */}
+        <Image
+          src="/assets/story/heritage-chicken.jpg"
+          alt=""
+          aria-hidden
+          fill
+          sizes="100vw"
+          className="pointer-events-none select-none object-cover"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-ink/40" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink/90 via-ink/20 to-ink/90" />
+
         <div className="pointer-events-none absolute -right-24 top-10 h-[30rem] w-[30rem] rounded-full bg-tex-red/25 blur-[120px]" />
         <div className="pointer-events-none absolute -left-32 bottom-0 h-[26rem] w-[26rem] rounded-full bg-tex-yellow/10 blur-[120px]" />
 
